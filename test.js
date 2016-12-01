@@ -29,47 +29,6 @@ describe('live-config', function () {
     });
   });
 
-  describe('initializing', function () {
-    beforeEach('create configLive', function () {
-      configLive = new ConfigLive(connectionOptions);
-    });
-
-    beforeEach('clear Redis', function (done) {
-      redisClient.unref();
-      redisClient.flushdb(done);
-    });
-
-    it('should throw an error when no or invalid host is specified', function () {
-      expect(function () {
-        new ConfigLive();
-      }).to.throw(/Invalid host type. Must be a string\./);
-
-      expect(function () {
-        new ConfigLive({ host: 123 });
-      }).to.throw(/Invalid host type. Must be a string\./);
-
-      expect(function () {
-        new ConfigLive({});
-      }).to.throw(/Invalid host type. Must be a string\./);
-    });
-
-    it('should throw an error when no or invalid port is specified', function () {
-      expect(function () {
-        new ConfigLive({ host: 'localhost' });
-      }).to.throw(/Invalid port type. Must be a number\./);
-
-      expect(function () {
-        new ConfigLive({ host: 'localhost', port: '6379' });
-      }).to.throw(/Invalid port type. Must be a number\./);
-    });
-
-    it('should not throw an error when host and port are valid', function () {
-      expect(function () {
-        new ConfigLive({ host: 'localhost', port: 6379 });
-      }).to.not.throw();
-    });
-  });
-
   describe('.start', function () {
     beforeEach('setup config', function () {
       config = {
