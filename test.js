@@ -24,7 +24,7 @@ describe('live-config', function () {
   describe('requiring', function () {
     it('should not throw an error', function () {
       expect(function () {
-        return require('./lib/live-config')
+        return require('./lib/live-config');
       }).to.not.throw();
     });
   });
@@ -78,7 +78,7 @@ describe('live-config', function () {
           testHost: 'http://some-host.com'
         },
         connectAttempt: 5
-      }
+      };
     });
 
     it('should emits \'started\' when started', function (done) {
@@ -122,7 +122,7 @@ describe('live-config', function () {
             });
           }
           catch(e) {
-            return done(e)
+            return done(e);
           }
 
           done();
@@ -159,7 +159,7 @@ describe('live-config', function () {
           });
         }
         catch (e) {
-          return done(e)
+          return done(e);
         }
       });
     });
@@ -179,7 +179,7 @@ describe('live-config', function () {
               expect(config).to.have.property('connectAttempt', '0');
             }
             catch (e) {
-              return done(e)
+              return done(e);
             }
 
             done();
@@ -214,7 +214,7 @@ describe('live-config', function () {
             });
           }
           catch (e) {
-            return done(e)
+            return done(e);
           }
         })
         .catch(function (err) {
@@ -231,7 +231,7 @@ describe('live-config', function () {
             done();
           }
           catch (e) {
-            return done(e)
+            return done(e);
           }
         })
         .catch(function (err) {
@@ -265,7 +265,7 @@ describe('live-config', function () {
                 done();
               }
               catch (e) {
-                return done(e)
+                return done(e);
               }
             })
             .catch(function (err) {
@@ -290,7 +290,7 @@ describe('live-config', function () {
                 done();
               }
               catch (e) {
-                return done(e)
+                return done(e);
               }
             })
             .catch(function (err) {
