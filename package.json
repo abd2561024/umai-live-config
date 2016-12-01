@@ -4,7 +4,7 @@
   "description": "Live updating and management of config in NodeJS.",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --timeout 5000"
+    "test": "./node_modules/.bin/jshint --exclude ./node_modules . && NODE_ENV=test mocha --timeout 5000"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "jshint": "^2.9.4",
     "mocha": "^2.5.3"
   }
 }
