@@ -1,6 +1,6 @@
 # umai-live-config
 
-[![Build Status](https://travis-ci.org/abd2561024/umai-config-live.svg?branch=master)](https://travis-ci.org/abd2561024/umai-config-live) [![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://raw.githubusercontent.com/technicallyjosh/node-config-live/master/LICENSE)
+[![Build Status](https://travis-ci.org/abd2561024/umai-live-config.svg?branch=master)](https://travis-ci.org/abd2561024/umai-live-config) [![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://raw.githubusercontent.com/technicallyjosh/node-config-live/master/LICENSE)
 
 # Introduction
 
