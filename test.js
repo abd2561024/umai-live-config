@@ -40,12 +40,12 @@ describe('live-config', function () {
       };
     });
 
-    it('should emits \'started\' when started', function (done) {
+    it('should emits \'ready\' when started', function (done) {
       configLive.on('error', function (err) {
         return done(err);
       });
 
-      configLive.once('started', function (message) {
+      configLive.once('ready', function (message) {
         try {
           expect(message).to.be.eql(config);
         }
@@ -69,7 +69,7 @@ describe('live-config', function () {
           done(err);
         });
 
-        configLive.once('started', function (message) {
+        configLive.once('ready', function (message) {
           try {
             expect(message).to.be.eql({
               db: {
@@ -100,7 +100,7 @@ describe('live-config', function () {
 
       configLive.start(config);
 
-      configLive.once('started', function () {
+      configLive.once('ready', function () {
         try {
           redisClient.hset(KEY, message.key, message.value, function (err) {
             if (err) {
@@ -133,7 +133,7 @@ describe('live-config', function () {
             done(err);
           });
 
-          configLive.once('started', function () {
+          configLive.once('ready', function () {
             try {
               expect(config).to.have.property('connectAttempt', '0');
             }
@@ -214,7 +214,7 @@ describe('live-config', function () {
           return done(err);
         }
 
-        configLive.once('started', function () {
+        configLive.once('ready', function () {
           configLive.get('port')
             .then(function (result) {
               try {
@@ -240,7 +240,7 @@ describe('live-config', function () {
           return done(err);
         }
 
-        configLive.once('started', function () {
+        configLive.once('ready', function () {
           configLive.get('invalid-key')
             .then(function (result) {
               try {
